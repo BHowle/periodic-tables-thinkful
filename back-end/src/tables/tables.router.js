@@ -1,22 +1,18 @@
-const router = require('express').Router({ mergeParams: true });
-const controller = require('./tables.controller');
-const methodNotAllowed = require('../errors/methodNotAllowed');
+const router = require("express").Router({ mergeParams: true });
+const controller = require("./tables.controller");
+const methodNotAllowed = require("../errors/methodNotAllowed");
 
 router
-  .route('/:tableId/seat')
-  .put(controller.update)
-  .delete(controller.delete)
+  .route("/")
+  .post(controller.create)
+  .get(controller.list)
   .all(methodNotAllowed);
 
 router
-  .route("/:tableId")
+  .route("/:table_id/seat")
   .get(controller.read)
-  .all(methodNotAllowed)
-
-router
-  .route('/')
-  .post(controller.create)
-  .get(controller.list)
+  .put(controller.update)
+  .delete(controller.delete)
   .all(methodNotAllowed);
 
 module.exports = router;

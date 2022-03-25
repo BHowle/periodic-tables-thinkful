@@ -1,14 +1,14 @@
 exports.up = function (knex) {
-  return knex.schema.createTable('tables', (table) => {
+  return knex.schema.createTable("tables", (table) => {
     table.increments("table_id").primary();
-    table.string("table_name").notNullable()
-    table.integer("capacity").notNullable()
-    table.integer("reservation_id").unsigned()
+    table.string("table_name");
+    table.integer("capacity");
+    table.string("status").defaultTo("free");
     table
-      .foreign("reservation_id")
+      .integer("reservation_id")
       .references("reservation_id")
       .inTable("reservations")
-      .onDelete("cascade");
+      .onDelete("set null");
     table.timestamps(true, true);
   });
 };
