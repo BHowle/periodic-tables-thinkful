@@ -46,3 +46,4 @@ The dashboard by default lists the tables and any reservations that are for the 
 The tables and their availability are listed in a table on the main page.
 
 ## Create a Reservation
+Creating a reservations is done by clicking 'New Reservation' on the navigation bar.
