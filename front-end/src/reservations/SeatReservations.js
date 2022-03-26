@@ -69,9 +69,9 @@ export default function SeatReservation() {
             >
               <option defaultValue>Open tables</option>
               {tables.map(
-                (table, index) =>
+                (table) =>
                   table.reservation_id === null && (
-                    <option key={index} value={table.table_id}>
+                    <option key={table.table_id} value={table.table_id}>
                       {table.table_name} - {table.capacity}
                     </option>
                   )
