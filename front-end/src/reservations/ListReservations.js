@@ -22,7 +22,7 @@ export default function ListReservations({ reservations, cancelHandler }) {
         <tbody>
           {reservations.length !== 0 ? (
             reservations.map((reservation, index) => (
-              <tr key={index}>
+              <tr key={reservation.reservation_id}>
                 <th scope="row">{reservation.reservation_id}</th>
                 {path.includes("search") && (
                   <td>{reservation.reservation_date}</td>
